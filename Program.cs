@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace NotificationSystem
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
+            NotificationFactory emailFactory = new EmailFactory();
+            emailFactory.SendNotification();
+
+            NotificationFactory smsFactory = new SMSFactory();
+            smsFactory.SendNotification();
+
+            NotificationFactory pushFactory = new PushFactory();
+            pushFactory.SendNotification();
+
+            Console.ReadLine();
         }
     }
 }
